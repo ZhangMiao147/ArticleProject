@@ -1,1 +1,1 @@
-include ':AndroidUnitTest', ':activityproject'
+include ':AndroidUnitTest', ':activityproject', ':bitmaplarget'

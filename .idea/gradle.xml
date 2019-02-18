@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/AndroidUnitTest" />
             <option value="$PROJECT_DIR$/activityproject" />
+            <option value="$PROJECT_DIR$/bitmaplarget" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
