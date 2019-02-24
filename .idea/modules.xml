@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidUnitTest/AndroidUnitTest.iml" filepath="$PROJECT_DIR$/AndroidUnitTest/AndroidUnitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/ArticleProject.iml" filepath="$PROJECT_DIR$/ArticleProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/activityproject/activityproject.iml" filepath="$PROJECT_DIR$/activityproject/activityproject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/animatorerror/animatorerror.iml" filepath="$PROJECT_DIR$/animatorerror/animatorerror.iml" />
       <module fileurl="file://$PROJECT_DIR$/bitmaplarget/bitmaplarget.iml" filepath="$PROJECT_DIR$/bitmaplarget/bitmaplarget.iml" />
     </modules>
   </component>
