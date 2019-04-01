@@ -1,5 +1,6 @@
 package com.zhangmiao.activityproject;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -58,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.goto_first_activity:
                 Log.d(TAG, "跳转FirstActivity");
+                Intent intent = new Intent(MainActivity.this, FirstActivity.class);
+                startActivity(intent);
                 break;
             default:
                 break;
