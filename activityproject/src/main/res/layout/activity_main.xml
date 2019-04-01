@@ -15,4 +15,16 @@
         android:layout_height="wrap_content"
         android:text="跳转firstActivity" />
 
+    <Button
+        android:id="@+id/show_standard_alert_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="弹出标准的AlertDialog" />
+
+    <Button
+        android:id="@+id/show_full_alert_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="弹出全屏的AlertDialog" />
+
 </LinearLayout>
