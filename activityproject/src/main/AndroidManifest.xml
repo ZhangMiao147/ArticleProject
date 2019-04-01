@@ -17,6 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".FirstActivity" />
+        <activity
+            android:name=".DialogActivity"
+            android:theme="@style/Theme.AppCompat.Dialog" />
     </application>
 
 </manifest>
