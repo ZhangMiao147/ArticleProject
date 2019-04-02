@@ -2,9 +2,9 @@ package com.zhangmiao.activityproject;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
@@ -21,6 +21,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.show_full_alert_dialog).setOnClickListener(this);
         findViewById(R.id.goto_dialog_activity).setOnClickListener(this);
         Log.d(TAG, "onCreate()");
+        if (savedInstanceState != null) {
+            String message = savedInstanceState.getString("message");
+            Log.d(TAG, "onCreate message:" + message);
+        }
     }
 
     @Override
@@ -63,7 +67,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.goto_first_activity:
-                Log.d(TAG, "跳转FirstActivity");
                 Intent intent = new Intent(MainActivity.this, FirstActivity.class);
                 startActivity(intent);
                 break;
@@ -97,6 +100,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             default:
                 break;
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        Log.d(TAG, "onSaveInstanceState()");
+        super.onSaveInstanceState(outState);
+        outState.putString("message", "onSaveInstanceState");
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        Log.d(TAG, "onRestoreInstanceState()");
+        super.onRestoreInstanceState(savedInstanceState);
+        if (savedInstanceState != null) {
+            String message = savedInstanceState.getString("message");
+            Log.d(TAG, "onRestoreInstanceState message:" + message);
         }
     }
 }
