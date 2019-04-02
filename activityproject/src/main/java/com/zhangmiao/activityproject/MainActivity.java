@@ -7,20 +7,28 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
+    private TextView tv_message;
+    private EditText et_input;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        tv_message = (TextView) findViewById(R.id.main_activity_message_tv);
+        et_input = (EditText) findViewById(R.id.main_activity_input_et);
         findViewById(R.id.goto_first_activity).setOnClickListener(this);
         findViewById(R.id.show_standard_alert_dialog).setOnClickListener(this);
         findViewById(R.id.show_full_alert_dialog).setOnClickListener(this);
         findViewById(R.id.goto_dialog_activity).setOnClickListener(this);
-        Log.d(TAG, "onCreate()");
+        Log.d(TAG, "onCreate() ");
+        Log.d(TAG, "onCreate() TextView的文本内容：" + tv_message.getText());
+        Log.d(TAG, "onCreate() EditText的内容为：" + et_input.getText());
         if (savedInstanceState != null) {
             String message = savedInstanceState.getString("message");
             Log.d(TAG, "onCreate message:" + message);
@@ -49,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onPause() {
         super.onPause();
         Log.d(TAG, "onPause()");
+        Log.d(TAG, "onPause EditText的内容为：" + et_input.getText());
     }
 
     @Override
@@ -73,6 +82,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.show_standard_alert_dialog:
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("这是一个标准的AlertDialog");
+                tv_message.setText("弹出了标准的AlertDialog");
+                Log.d(TAG, "修改TextView的文本为弹出了标准的AlertDialog");
                 builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
