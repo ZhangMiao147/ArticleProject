@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.goto_first_activity).setOnClickListener(this);
         findViewById(R.id.show_standard_alert_dialog).setOnClickListener(this);
         findViewById(R.id.show_full_alert_dialog).setOnClickListener(this);
+        findViewById(R.id.goto_dialog_activity).setOnClickListener(this);
         Log.d(TAG, "onCreate()");
     }
 
@@ -89,6 +90,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 });
                 AlertDialog fullAlertDialog = fullBuilder.create();
                 fullAlertDialog.show();
+                break;
+            case R.id.goto_dialog_activity:
+                Intent DialogIntent = new Intent(MainActivity.this, DialogActivity.class);
+                startActivity(DialogIntent);
                 break;
             default:
                 break;
