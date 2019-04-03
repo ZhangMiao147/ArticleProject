@@ -6,14 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-public class FirstActivity extends AppCompatActivity implements View.OnClickListener {
+public class SecondActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private static final String TAG = FirstActivity.class.getSimpleName();
+    private static final String TAG = SecondActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first);
+        setContentView(R.layout.activity_second);
         findViewById(R.id.goto_main_activity).setOnClickListener(this);
         findViewById(R.id.goto_first_activity).setOnClickListener(this);
         findViewById(R.id.goto_second_activity).setOnClickListener(this);
@@ -60,15 +60,15 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.goto_main_activity:
-                Intent mainIntent = new Intent(FirstActivity.this, MainActivity.class);
+                Intent mainIntent = new Intent(SecondActivity.this, MainActivity.class);
                 startActivity(mainIntent);
                 break;
             case R.id.goto_first_activity:
-                Intent firstIntent = new Intent(FirstActivity.this, FirstActivity.class);
+                Intent firstIntent = new Intent(SecondActivity.this, FirstActivity.class);
                 startActivity(firstIntent);
                 break;
             case R.id.goto_second_activity:
-                Intent secondIntent = new Intent(FirstActivity.this, SecondActivity.class);
+                Intent secondIntent = new Intent(SecondActivity.this, SecondActivity.class);
                 startActivity(secondIntent);
                 break;
             default:

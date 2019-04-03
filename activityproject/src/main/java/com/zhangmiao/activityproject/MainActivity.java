@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.show_standard_alert_dialog).setOnClickListener(this);
         findViewById(R.id.show_full_alert_dialog).setOnClickListener(this);
         findViewById(R.id.goto_dialog_activity).setOnClickListener(this);
+        findViewById(R.id.goto_main_activity).setOnClickListener(this);
         Log.d(TAG, "onCreate() ");
         Log.d(TAG, "onCreate() TextView的文本内容：" + tv_message.getText());
         Log.d(TAG, "onCreate() EditText的内容为：" + et_input.getText());
@@ -115,6 +116,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.goto_dialog_activity:
                 Intent DialogIntent = new Intent(MainActivity.this, DialogActivity.class);
                 startActivity(DialogIntent);
+                break;
+            case R.id.goto_main_activity:
+                Intent mainIntent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(mainIntent);
                 break;
             default:
                 break;
