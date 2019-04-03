@@ -39,18 +39,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onRestart() {
         super.onRestart();
         Log.d(TAG, "onRestart()");
+        Log.d(TAG, "onRestart() EditText的内容为：" + et_input.getText());
+        Log.d(TAG, "onRestart() TextView的文本内容：" + tv_message.getText());
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         Log.d(TAG, "onStart()");
+        Log.d(TAG, "onStart() EditText的内容为：" + et_input.getText());
+        Log.d(TAG, "onStart() TextView的文本内容：" + tv_message.getText());
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         Log.d(TAG, "onResume()");
+        Log.d(TAG, "onResume() EditText的内容为：" + et_input.getText());
+        Log.d(TAG, "onResume() TextView的文本内容：" + tv_message.getText());
     }
 
     @Override
@@ -58,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onPause();
         Log.d(TAG, "onPause()");
         Log.d(TAG, "onPause EditText的内容为：" + et_input.getText());
+        Log.d(TAG, "onPause TextView的内容为：" + tv_message.getText());
     }
 
     @Override

@@ -8,6 +8,7 @@
         android:id="@+id/main_activity_message_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:freezesText="true"
         android:text="这是 MainActivity" />
 
     <EditText
