@@ -17,10 +17,22 @@
         android:layout_height="wrap_content" />
 
     <Button
+        android:id="@+id/goto_main_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转MainActivity" />
+
+    <Button
         android:id="@+id/goto_first_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="跳转firstActivity" />
+
+    <Button
+        android:id="@+id/goto_second_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转SecondActivity" />
 
     <Button
         android:id="@+id/show_standard_alert_dialog"
@@ -39,11 +51,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="弹出主题为Dialog的Activity" />
-
-    <Button
-        android:id="@+id/goto_main_activity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="跳转MainActivity" />
 
 </LinearLayout>

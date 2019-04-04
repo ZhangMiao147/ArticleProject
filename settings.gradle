@@ -1,1 +1,1 @@
-include ':AndroidUnitTest', ':activityproject', ':bitmaplarget', ':animatorerror'
+include ':AndroidUnitTest', ':activityproject', ':bitmaplarget', ':animatorerror', ':playaudiotest'

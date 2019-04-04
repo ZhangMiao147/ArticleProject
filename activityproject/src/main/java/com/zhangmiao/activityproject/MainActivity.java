@@ -22,11 +22,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         tv_message = (TextView) findViewById(R.id.main_activity_message_tv);
         et_input = (EditText) findViewById(R.id.main_activity_input_et);
+        findViewById(R.id.goto_main_activity).setOnClickListener(this);
         findViewById(R.id.goto_first_activity).setOnClickListener(this);
+        findViewById(R.id.goto_second_activity).setOnClickListener(this);
         findViewById(R.id.show_standard_alert_dialog).setOnClickListener(this);
         findViewById(R.id.show_full_alert_dialog).setOnClickListener(this);
         findViewById(R.id.goto_dialog_activity).setOnClickListener(this);
-        findViewById(R.id.goto_main_activity).setOnClickListener(this);
         Log.d(TAG, "onCreate() ");
         Log.d(TAG, "onCreate() TextView的文本内容：" + tv_message.getText());
         Log.d(TAG, "onCreate() EditText的内容为：" + et_input.getText());
@@ -83,9 +84,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.goto_main_activity:
+                Intent mainIntent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(mainIntent);
+                break;
             case R.id.goto_first_activity:
                 Intent intent = new Intent(MainActivity.this, FirstActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.goto_second_activity:
+                Intent secondIntent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(secondIntent);
                 break;
             case R.id.show_standard_alert_dialog:
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -116,10 +125,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.goto_dialog_activity:
                 Intent DialogIntent = new Intent(MainActivity.this, DialogActivity.class);
                 startActivity(DialogIntent);
-                break;
-            case R.id.goto_main_activity:
-                Intent mainIntent = new Intent(MainActivity.this, MainActivity.class);
-                startActivity(mainIntent);
                 break;
             default:
                 break;
