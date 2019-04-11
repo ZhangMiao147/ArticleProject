@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
+import static android.content.Intent.FLAG_ACTIVITY_NO_HISTORY;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -89,8 +92,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(mainIntent);
                 break;
             case R.id.goto_first_activity:
-                Intent intent = new Intent(MainActivity.this, FirstActivity.class);
-                startActivity(intent);
+                Intent firstIntent = new Intent(MainActivity.this, FirstActivity.class);
+                firstIntent.setFlags(FLAG_ACTIVITY_NO_HISTORY);
+                startActivity(firstIntent);
                 break;
             case R.id.goto_second_activity:
                 Intent secondIntent = new Intent(MainActivity.this, SecondActivity.class);

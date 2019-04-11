@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-public class SecondActivity extends AppCompatActivity implements View.OnClickListener{
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
+
+public class SecondActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = SecondActivity.class.getSimpleName();
 
@@ -65,6 +67,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.goto_first_activity:
                 Intent firstIntent = new Intent(SecondActivity.this, FirstActivity.class);
+//                firstIntent.setFlags(FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(firstIntent);
                 break;
             case R.id.goto_second_activity:
