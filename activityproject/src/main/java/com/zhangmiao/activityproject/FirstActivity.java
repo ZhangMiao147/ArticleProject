@@ -65,6 +65,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.goto_first_activity:
                 Intent firstIntent = new Intent(FirstActivity.this, FirstActivity.class);
+                firstIntent.putExtra("from", "FirstActivity");
                 startActivity(firstIntent);
                 break;
             case R.id.goto_second_activity:
@@ -74,5 +75,12 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
             default:
                 break;
         }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        String from = intent.getStringExtra("from");
+        Log.d(TAG, "onNewIntent from:" + from);
+        super.onNewIntent(intent);
     }
 }

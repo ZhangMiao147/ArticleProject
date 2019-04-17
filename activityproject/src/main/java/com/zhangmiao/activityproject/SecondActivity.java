@@ -68,6 +68,8 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.goto_first_activity:
                 Intent firstIntent = new Intent(SecondActivity.this, FirstActivity.class);
 //                firstIntent.setFlags(FLAG_ACTIVITY_CLEAR_TOP);
+                firstIntent.putExtra("from", "SecondActivity");
+//                firstIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(firstIntent);
                 break;
             case R.id.goto_second_activity:

@@ -93,7 +93,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.goto_first_activity:
                 Intent firstIntent = new Intent(MainActivity.this, FirstActivity.class);
-                firstIntent.setFlags(FLAG_ACTIVITY_NO_HISTORY);
+                firstIntent.putExtra("from", "MainActivity");
+//                firstIntent.setFlags(FLAG_ACTIVITY_NO_HISTORY);
+//                firstIntent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                firstIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(firstIntent);
                 break;
             case R.id.goto_second_activity:

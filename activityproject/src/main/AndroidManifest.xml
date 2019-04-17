@@ -11,7 +11,9 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:configChanges="orientation|screenSize">
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FirstActivity" />
+            android:name=".FirstActivity"
+            android:taskAffinity="android.task.browser" />
         <activity android:name=".SecondActivity" />
         <activity
             android:name=".DialogActivity"
