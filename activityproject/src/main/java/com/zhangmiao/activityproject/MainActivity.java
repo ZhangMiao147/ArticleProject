@@ -1,5 +1,6 @@
 package com.zhangmiao.activityproject;
 
+import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,44 +33,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.show_full_alert_dialog).setOnClickListener(this);
         findViewById(R.id.goto_dialog_activity).setOnClickListener(this);
         Log.d(TAG, "onCreate() ");
-        Log.d(TAG, "onCreate() TextView的文本内容：" + tv_message.getText());
-        Log.d(TAG, "onCreate() EditText的内容为：" + et_input.getText());
+//        Log.d(TAG, "onCreate() TextView的文本内容：" + tv_message.getText());
+//        Log.d(TAG, "onCreate() EditText的内容为：" + et_input.getText());
         if (savedInstanceState != null) {
             String message = savedInstanceState.getString("message");
             Log.d(TAG, "onCreate message:" + message);
         }
+        Intent intent = getIntent();
+        String hex = Integer.toHexString(intent.getFlags());
+        Log.d(TAG, "intent.getFlags():" + hex);
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
         Log.d(TAG, "onRestart()");
-        Log.d(TAG, "onRestart() EditText的内容为：" + et_input.getText());
-        Log.d(TAG, "onRestart() TextView的文本内容：" + tv_message.getText());
+//        Log.d(TAG, "onRestart() EditText的内容为：" + et_input.getText());
+//        Log.d(TAG, "onRestart() TextView的文本内容：" + tv_message.getText());
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         Log.d(TAG, "onStart()");
-        Log.d(TAG, "onStart() EditText的内容为：" + et_input.getText());
-        Log.d(TAG, "onStart() TextView的文本内容：" + tv_message.getText());
+//        Log.d(TAG, "onStart() EditText的内容为：" + et_input.getText());
+//        Log.d(TAG, "onStart() TextView的文本内容：" + tv_message.getText());
+        Intent intent = getIntent();
+        String hex = Integer.toHexString(intent.getFlags());
+        Log.d(TAG, "intent.getFlags():" + hex);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         Log.d(TAG, "onResume()");
-        Log.d(TAG, "onResume() EditText的内容为：" + et_input.getText());
-        Log.d(TAG, "onResume() TextView的文本内容：" + tv_message.getText());
+//        Log.d(TAG, "onResume() EditText的内容为：" + et_input.getText());
+//        Log.d(TAG, "onResume() TextView的文本内容：" + tv_message.getText());
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         Log.d(TAG, "onPause()");
-        Log.d(TAG, "onPause EditText的内容为：" + et_input.getText());
-        Log.d(TAG, "onPause TextView的内容为：" + tv_message.getText());
+//        Log.d(TAG, "onPause EditText的内容为：" + et_input.getText());
+//        Log.d(TAG, "onPause TextView的内容为：" + tv_message.getText());
     }
 
     @Override
@@ -93,11 +100,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.goto_first_activity:
                 Intent firstIntent = new Intent(MainActivity.this, FirstActivity.class);
-                firstIntent.putExtra("from", "MainActivity");
+//                ComponentName componentName = new ComponentName(this,FirstActivity.class);
+//                Intent firstIntent = new Intent();
+//                firstIntent.setComponent(componentName);
+//                firstIntent.setClass(this,FirstActivity.class);
+//                firstIntent.setClassName(this,"com.zhangmiao.activityproject.FirstActivity");
+
+//                firstIntent.putExtra("from", "MainActivity");
 //                firstIntent.setFlags(FLAG_ACTIVITY_NO_HISTORY);
 //                firstIntent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                firstIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                firstIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                firstIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                firstIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+//                firstIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+//                firstIntent.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+//                Bundle bundle = new Bundle();
+//                bundle.putString("from", "MainActivity");
+//                bundle.putInt("count", 1);
+//                firstIntent.putExtras(bundle);
                 startActivity(firstIntent);
+//                startActivityForResult(firstIntent, 10001);
                 break;
             case R.id.goto_second_activity:
                 Intent secondIntent = new Intent(MainActivity.this, SecondActivity.class);
@@ -153,5 +175,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String message = savedInstanceState.getString("message");
             Log.d(TAG, "onRestoreInstanceState message:" + message);
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.d(TAG, "onActivityResult requestCode:" + requestCode + ",resultCode:" + resultCode);
+        if (requestCode == 10001 && resultCode == 20001) {
+            if (data != null) {
+                String result = data.getStringExtra("result");
+            }
+        }
+    }
+
+    @Override
+    protected void onUserLeaveHint() {
+        super.onUserLeaveHint();
+        Log.d(TAG, "onUserLeaveHint");
     }
 }

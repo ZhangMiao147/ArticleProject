@@ -19,6 +19,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.goto_main_activity).setOnClickListener(this);
         findViewById(R.id.goto_first_activity).setOnClickListener(this);
         findViewById(R.id.goto_second_activity).setOnClickListener(this);
+        findViewById(R.id.set_result).setOnClickListener(this);
         Log.d(TAG, "onCreate()");
     }
 
@@ -32,6 +33,9 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
     protected void onStart() {
         super.onStart();
         Log.d(TAG, "onStart()");
+        Intent intent = getIntent();
+        String hex = Integer.toHexString(intent.getFlags());
+        Log.d(TAG, "intent.getFlags():" + hex);
     }
 
     @Override
@@ -67,14 +71,19 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.goto_first_activity:
                 Intent firstIntent = new Intent(SecondActivity.this, FirstActivity.class);
-//                firstIntent.setFlags(FLAG_ACTIVITY_CLEAR_TOP);
+//                firstIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                firstIntent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 firstIntent.putExtra("from", "SecondActivity");
-//                firstIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(firstIntent);
                 break;
             case R.id.goto_second_activity:
                 Intent secondIntent = new Intent(SecondActivity.this, SecondActivity.class);
                 startActivity(secondIntent);
+                break;
+            case R.id.set_result:
+                Log.d(TAG, "返回值");
+                setResult(30002);
+                finish();
                 break;
             default:
                 break;
