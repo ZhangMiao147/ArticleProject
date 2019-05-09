@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/animatorerror" />
             <option value="$PROJECT_DIR$/bitmaplarget" />
             <option value="$PROJECT_DIR$/playaudiotest" />
+            <option value="$PROJECT_DIR$/serviceproject" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

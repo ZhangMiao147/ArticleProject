@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/animatorerror/animatorerror.iml" filepath="$PROJECT_DIR$/animatorerror/animatorerror.iml" />
       <module fileurl="file://$PROJECT_DIR$/bitmaplarget/bitmaplarget.iml" filepath="$PROJECT_DIR$/bitmaplarget/bitmaplarget.iml" />
       <module fileurl="file://$PROJECT_DIR$/playaudiotest/playaudiotest.iml" filepath="$PROJECT_DIR$/playaudiotest/playaudiotest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serviceproject/serviceproject.iml" filepath="$PROJECT_DIR$/serviceproject/serviceproject.iml" />
     </modules>
   </component>
 </project>

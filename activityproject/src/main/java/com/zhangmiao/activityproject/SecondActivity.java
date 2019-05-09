@@ -73,6 +73,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
                 Intent firstIntent = new Intent(SecondActivity.this, FirstActivity.class);
 //                firstIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //                firstIntent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                firstIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 firstIntent.putExtra("from", "SecondActivity");
                 startActivity(firstIntent);
                 break;
