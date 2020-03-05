@@ -1,1 +1,1 @@
-include ':AndroidUnitTest', ':activityproject', ':bitmaplarget', ':animatorerror', ':playaudiotest', ':serviceproject', ':broadcastreceiverproject', ':rxjavaanalysis'
+include ':AndroidUnitTest', ':activityproject', ':bitmaplarget', ':animatorerror', ':playaudiotest', ':serviceproject', ':broadcastreceiverproject', ':rxjavaanalysis', ':rabbitmqproject'
